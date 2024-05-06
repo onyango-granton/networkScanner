@@ -6,14 +6,29 @@ import (
 	"os/exec"
 )
 
-func main() {
-	cmd := exec.Command("ping", "google.com")
+func KnowMyIP() {
+	cmd := exec.Command("ip", "addr")
 
-	cmd.Stdout = os.Stdout
+	out, err :=cmd.Output()
 
-	err := cmd.Run()
-
-	if err != nil {
+	if err != nil{
 		fmt.Println(err.Error())
+		os.Exit(0)
 	}
+
+	fmt.Println(string(out))
+
+}
+
+func main() {
+	// cmd := exec.Command("ping", "google.com")
+
+	// cmd.Stdout = os.Stdout
+
+	// err := cmd.Run()
+
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// }
+	KnowMyIP()
 }
