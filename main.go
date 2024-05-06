@@ -47,41 +47,42 @@ func PingAddress() {
 	}
 }
 
-func PingMembersOfNet() {
-	startTime := time.Now()
-	duration := int(time.Since(startTime).Seconds())
-	for i := 170; i < 173; i++ {
-		cmd := exec.Command("ping", "192.168.89."+strconv.Itoa(i))
+type customOutput struct{}
 
+func (c customOutput) Write(p []byte) (int, error) {
+	fmt.Println("received output: ", string(p))
+	return len(p), nil
+}
+
+
+
+func PingMembersOfNet(n int) {
+		cmd := exec.Command("ping", "192.168.89."+strconv.Itoa(n))
+
+		// cmd.Stdout = customOutput{}
 		cmd.Stdout = os.Stdout
+		fmt.Println(cmd.Stdout)
 
-		duration = int(time.Since(startTime).Seconds())
+		var d = 1000 * time.Microsecond
+   		var t = time.Now().Add(d)
 
-		if duration == 2{
-			fmt.Println("Here")
+		for {
+			for time.Now().Before(t){
+				fmt.Println("Hello")
+				cmd.Run()
+			}
+			break
 		}
-
-		err := cmd.Run()
+		// cmd.Run()
 
 		fmt.Println("Here")
 
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-	}
+		// if err != nil {
+		// 	fmt.Println(err.Error())
+		// }
+
 }
 
 func main() {
-	// cmd := exec.Command("ping", "google.com")
-
-	// cmd.Stdout = os.Stdout
-
-	// err := cmd.Run()
-
-	// if err != nil {
-	// 	fmt.Println(err.Error())
-	// }
-	// KnowMyIP()
-	// PingAddress()
-	PingMembersOfNet()
+    PingMembersOfNet(173)
 }
