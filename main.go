@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"os/exec"
@@ -84,5 +85,16 @@ func PingMembersOfNet(n int) {
 }
 
 func main() {
-    PingMembersOfNet(173)
+	ctx := context.Background()
+	// The context now times out after 1 second
+	// alternately, we can call `cancel()` to terminate immediately
+	ctx, _ = context.WithTimeout(ctx, 7*time.Second)
+	
+	cmd := exec.CommandContext(ctx, "ping", "192.268.0.33")
+	
+	out, err := cmd.Output()
+	if err != nil {
+	  fmt.Println("could not run command: ", err)
+	}
+	fmt.Println("Output: ", string(out))
 }
