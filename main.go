@@ -1,7 +1,7 @@
 package main
 
 import (
-	"context"
+	// "context"
 	"fmt"
 	"os"
 	"os/exec"
@@ -58,43 +58,35 @@ func (c customOutput) Write(p []byte) (int, error) {
 
 
 func PingMembersOfNet(n int) {
-		cmd := exec.Command("ping", "192.168.89."+strconv.Itoa(n))
+		cmd := exec.Command("ping", "-c","2","192.168.89."+strconv.Itoa(n))
 
-		// cmd.Stdout = customOutput{}
 		cmd.Stdout = os.Stdout
-		fmt.Println(cmd.Stdout)
 
-		var d = 1000 * time.Microsecond
-   		var t = time.Now().Add(d)
+		err := cmd.Run()
 
-		for {
-			for time.Now().Before(t){
-				fmt.Println("Hello")
-				cmd.Run()
-			}
-			break
+		if err != nil{
+			fmt.Println(err.Error())
 		}
-		// cmd.Run()
 
-		fmt.Println("Here")
-
-		// if err != nil {
-		// 	fmt.Println(err.Error())
-		// }
+		fmt.Println("END")
 
 }
 
 func main() {
-	ctx := context.Background()
-	// The context now times out after 1 second
-	// alternately, we can call `cancel()` to terminate immediately
-	ctx, _ = context.WithTimeout(ctx, 7*time.Second)
+	// ctx := context.Background()
+	// // The context now times out after 1 second
+	// // alternately, we can call `cancel()` to terminate immediately
+	// ctx, _ = context.WithTimeout(ctx, 7*time.Second)
 	
-	cmd := exec.CommandContext(ctx, "ping", "192.268.0.33")
+	// cmd := exec.CommandContext(ctx, "ping", "192.268.0.33")
 	
-	out, err := cmd.Output()
-	if err != nil {
-	  fmt.Println("could not run command: ", err)
+	// out, err := cmd.Output()
+	// if err != nil {
+	//   fmt.Println("could not run command: ", err)
+	// }
+	// fmt.Println("Output: ", string(out))
+	for i := 1; i < 255; i++{
+		PingMembersOfNet(i)
 	}
-	fmt.Println("Output: ", string(out))
+	// PingMembersOfNet(173)
 }
