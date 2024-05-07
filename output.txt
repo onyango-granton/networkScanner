@@ -9,6 +9,6 @@
 3: wlp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
     link/ether f8:59:71:33:45:64 brd ff:ff:ff:ff:ff:ff
     inet 192.168.89.173/24 brd 192.168.89.255 scope global dynamic noprefixroute wlp4s0
-       valid_lft 433sec preferred_lft 433sec
+       valid_lft 453sec preferred_lft 453sec
     inet6 fe80::e19a:2cb:3726:7e1f/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever

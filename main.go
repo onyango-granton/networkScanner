@@ -12,7 +12,7 @@ import (
 	// "strings"
 )
 
-func KnowMyIP() {
+func KnowMyIP() []string{
 	cmd := exec.Command("ip", "addr")
 
 	out, err := cmd.Output()
@@ -28,9 +28,10 @@ func KnowMyIP() {
 		fmt.Println(err1.Error())
 	}
 
-	for _,ch := range obtainIP("output.txt"){
-		fmt.Println(ch)
-	}
+	// for _,ch := range obtainIP("output.txt"){
+	// 	fmt.Println(ch)
+	// }
+	return obtainIP("output.txt")
 }
 
 func obtainIP(s string) []string {
@@ -59,8 +60,17 @@ func obtainIP(s string) []string {
 
 			stringsSplit := strings.Split(ch, " ")
 			ipAddr = append(ipAddr, stringsSplit[0])
+
+			// for k, num := range stringsSplit[0]{
+
+			// }
 		}
 	}
+
+	// for _, ch := range ipAddr{
+	// 	re ,_ := strconv.Atoi(ch)
+	// 	fmt.Println(re)
+	// }
 
 	return ipAddr
 
