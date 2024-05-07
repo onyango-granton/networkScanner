@@ -22,10 +22,10 @@ func KnowMyIP() []string {
 
 	// output is then written to an output text file
 	// output.txt has been manualy edited to hide sensitive info
-	err1 := os.WriteFile("output.txt", out, 0o644)
+	err1 := os.WriteFile("Output Files/info.txt", out, 0o644)
 	if err1 != nil {
 		fmt.Println(err1.Error())
 	}
 
-	return ObtainIP("output.txt")
+	return ObtainIP("Output Files/info.txt")
 }

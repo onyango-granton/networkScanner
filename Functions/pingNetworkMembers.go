@@ -25,7 +25,7 @@ func PingNetworkMembers() {
 	}
 
 	// creating a file called neew.txt to store output(ip addresses)
-	f, err := os.Create("new.txt")
+	f, err := os.Create("Output Files/output.txt")
 	if err != nil {
 		panic(err)
 	}

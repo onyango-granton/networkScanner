@@ -1,9 +1,9 @@
 PING 192.168.89.1 (192.168.89.1) 56(84) bytes of data.
-64 bytes from 192.168.89.1: icmp_seq=1 ttl=64 time=257 ms
+64 bytes from 192.168.89.1: icmp_seq=1 ttl=64 time=63.3 ms
 
 --- 192.168.89.1 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 257.064/257.064/257.064/0.000 ms
+rtt min/avg/max/mdev = 63.328/63.328/63.328/0.000 ms
 PING 192.168.89.2 (192.168.89.2) 56(84) bytes of data.
 
 --- 192.168.89.2 ping statistics ---
@@ -64,17 +64,17 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.12 (192.168.89.12) 56(84) bytes of data.
-64 bytes from 192.168.89.12: icmp_seq=1 ttl=64 time=2.39 ms
+64 bytes from 192.168.89.12: icmp_seq=1 ttl=64 time=9.04 ms
 
 --- 192.168.89.12 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2.385/2.385/2.385/0.000 ms
+rtt min/avg/max/mdev = 9.038/9.038/9.038/0.000 ms
 PING 192.168.89.13 (192.168.89.13) 56(84) bytes of data.
-64 bytes from 192.168.89.13: icmp_seq=1 ttl=64 time=2.41 ms
+64 bytes from 192.168.89.13: icmp_seq=1 ttl=64 time=0.670 ms
 
 --- 192.168.89.13 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2.406/2.406/2.406/0.000 ms
+rtt min/avg/max/mdev = 0.670/0.670/0.670/0.000 ms
 PING 192.168.89.14 (192.168.89.14) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -142,11 +142,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.25 (192.168.89.25) 56(84) bytes of data.
-From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
+64 bytes from 192.168.89.25: icmp_seq=1 ttl=64 time=90.0 ms
 
 --- 192.168.89.25 ping statistics ---
-1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
-
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 89.992/89.992/89.992/0.000 ms
 PING 192.168.89.26 (192.168.89.26) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -172,17 +172,16 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.30 (192.168.89.30) 56(84) bytes of data.
-64 bytes from 192.168.89.30: icmp_seq=1 ttl=64 time=1265 ms
 
 --- 192.168.89.30 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1264.859/1264.859/1264.859/0.000 ms
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
 PING 192.168.89.31 (192.168.89.31) 56(84) bytes of data.
-64 bytes from 192.168.89.31: icmp_seq=1 ttl=64 time=1184 ms
+64 bytes from 192.168.89.31: icmp_seq=1 ttl=64 time=850 ms
 
 --- 192.168.89.31 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1183.932/1183.932/1183.932/0.000 ms
+rtt min/avg/max/mdev = 850.227/850.227/850.227/0.000 ms
 PING 192.168.89.32 (192.168.89.32) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -208,11 +207,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.36 (192.168.89.36) 56(84) bytes of data.
-64 bytes from 192.168.89.36: icmp_seq=1 ttl=64 time=1566 ms
+64 bytes from 192.168.89.36: icmp_seq=1 ttl=64 time=857 ms
 
 --- 192.168.89.36 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1565.608/1565.608/1565.608/0.000 ms
+rtt min/avg/max/mdev = 857.141/857.141/857.141/0.000 ms
 PING 192.168.89.37 (192.168.89.37) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -226,11 +225,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.39 (192.168.89.39) 56(84) bytes of data.
-64 bytes from 192.168.89.39: icmp_seq=1 ttl=64 time=2100 ms
+64 bytes from 192.168.89.39: icmp_seq=1 ttl=64 time=622 ms
 
 --- 192.168.89.39 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2100.292/2100.292/2100.292/0.000 ms
+rtt min/avg/max/mdev = 622.276/622.276/622.276/0.000 ms
 PING 192.168.89.40 (192.168.89.40) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -267,23 +266,22 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.46 (192.168.89.46) 56(84) bytes of data.
-64 bytes from 192.168.89.46: icmp_seq=1 ttl=64 time=4.00 ms
+64 bytes from 192.168.89.46: icmp_seq=1 ttl=64 time=5.09 ms
 
 --- 192.168.89.46 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 4.003/4.003/4.003/0.000 ms
+rtt min/avg/max/mdev = 5.091/5.091/5.091/0.000 ms
 PING 192.168.89.47 (192.168.89.47) 56(84) bytes of data.
-64 bytes from 192.168.89.47: icmp_seq=1 ttl=64 time=93.7 ms
+64 bytes from 192.168.89.47: icmp_seq=1 ttl=64 time=25.2 ms
 
 --- 192.168.89.47 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 93.729/93.729/93.729/0.000 ms
+rtt min/avg/max/mdev = 25.198/25.198/25.198/0.000 ms
 PING 192.168.89.48 (192.168.89.48) 56(84) bytes of data.
-64 bytes from 192.168.89.48: icmp_seq=1 ttl=64 time=31.1 ms
 
 --- 192.168.89.48 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 31.128/31.128/31.128/0.000 ms
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
 PING 192.168.89.49 (192.168.89.49) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -302,11 +300,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.52 (192.168.89.52) 56(84) bytes of data.
-64 bytes from 192.168.89.52: icmp_seq=1 ttl=64 time=239 ms
+64 bytes from 192.168.89.52: icmp_seq=1 ttl=64 time=109 ms
 
 --- 192.168.89.52 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 238.721/238.721/238.721/0.000 ms
+rtt min/avg/max/mdev = 109.067/109.067/109.067/0.000 ms
 PING 192.168.89.53 (192.168.89.53) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -337,17 +335,17 @@ PING 192.168.89.57 (192.168.89.57) 56(84) bytes of data.
 1 packets transmitted, 0 received, 100% packet loss, time 0ms
 
 PING 192.168.89.58 (192.168.89.58) 56(84) bytes of data.
-64 bytes from 192.168.89.58: icmp_seq=1 ttl=64 time=1329 ms
+64 bytes from 192.168.89.58: icmp_seq=1 ttl=64 time=635 ms
 
 --- 192.168.89.58 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1328.501/1328.501/1328.501/0.000 ms
+rtt min/avg/max/mdev = 635.491/635.491/635.491/0.000 ms
 PING 192.168.89.59 (192.168.89.59) 56(84) bytes of data.
-From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
+64 bytes from 192.168.89.59: icmp_seq=1 ttl=64 time=1591 ms
 
 --- 192.168.89.59 ping statistics ---
-1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
-
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1590.885/1590.885/1590.885/0.000 ms
 PING 192.168.89.60 (192.168.89.60) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -361,11 +359,10 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.62 (192.168.89.62) 56(84) bytes of data.
-64 bytes from 192.168.89.62: icmp_seq=1 ttl=64 time=339 ms
 
 --- 192.168.89.62 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 339.485/339.485/339.485/0.000 ms
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
 PING 192.168.89.63 (192.168.89.63) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -391,11 +388,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.67 (192.168.89.67) 56(84) bytes of data.
-64 bytes from 192.168.89.67: icmp_seq=1 ttl=64 time=1143 ms
+64 bytes from 192.168.89.67: icmp_seq=1 ttl=64 time=59.9 ms
 
 --- 192.168.89.67 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1142.643/1142.643/1142.643/0.000 ms
+rtt min/avg/max/mdev = 59.899/59.899/59.899/0.000 ms
 PING 192.168.89.68 (192.168.89.68) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -409,11 +406,10 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.70 (192.168.89.70) 56(84) bytes of data.
-64 bytes from 192.168.89.70: icmp_seq=1 ttl=64 time=1211 ms
 
 --- 192.168.89.70 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1210.995/1210.995/1210.995/0.000 ms
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
 PING 192.168.89.71 (192.168.89.71) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -427,11 +423,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.73 (192.168.89.73) 56(84) bytes of data.
-64 bytes from 192.168.89.73: icmp_seq=1 ttl=64 time=21.5 ms
+64 bytes from 192.168.89.73: icmp_seq=1 ttl=64 time=82.5 ms
 
 --- 192.168.89.73 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 21.522/21.522/21.522/0.000 ms
+rtt min/avg/max/mdev = 82.494/82.494/82.494/0.000 ms
 PING 192.168.89.74 (192.168.89.74) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -451,11 +447,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.77 (192.168.89.77) 56(84) bytes of data.
-64 bytes from 192.168.89.77: icmp_seq=1 ttl=64 time=2147 ms
+64 bytes from 192.168.89.77: icmp_seq=1 ttl=64 time=171 ms
 
 --- 192.168.89.77 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2147.274/2147.274/2147.274/0.000 ms
+rtt min/avg/max/mdev = 170.525/170.525/170.525/0.000 ms
 PING 192.168.89.78 (192.168.89.78) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -463,11 +459,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.79 (192.168.89.79) 56(84) bytes of data.
-From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
+64 bytes from 192.168.89.79: icmp_seq=1 ttl=64 time=79.7 ms
 
 --- 192.168.89.79 ping statistics ---
-1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
-
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 79.675/79.675/79.675/0.000 ms
 PING 192.168.89.80 (192.168.89.80) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -475,29 +471,28 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.81 (192.168.89.81) 56(84) bytes of data.
-64 bytes from 192.168.89.81: icmp_seq=1 ttl=64 time=232 ms
+64 bytes from 192.168.89.81: icmp_seq=1 ttl=64 time=995 ms
 
 --- 192.168.89.81 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 232.451/232.451/232.451/0.000 ms
+rtt min/avg/max/mdev = 995.057/995.057/995.057/0.000 ms
 PING 192.168.89.82 (192.168.89.82) 56(84) bytes of data.
-64 bytes from 192.168.89.82: icmp_seq=1 ttl=64 time=2309 ms
 
 --- 192.168.89.82 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2309.474/2309.474/2309.474/0.000 ms
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
 PING 192.168.89.83 (192.168.89.83) 56(84) bytes of data.
-64 bytes from 192.168.89.83: icmp_seq=1 ttl=64 time=324 ms
+64 bytes from 192.168.89.83: icmp_seq=1 ttl=64 time=2229 ms
 
 --- 192.168.89.83 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 323.666/323.666/323.666/0.000 ms
+rtt min/avg/max/mdev = 2229.344/2229.344/2229.344/0.000 ms
 PING 192.168.89.84 (192.168.89.84) 56(84) bytes of data.
-64 bytes from 192.168.89.84: icmp_seq=1 ttl=64 time=16.5 ms
+64 bytes from 192.168.89.84: icmp_seq=1 ttl=64 time=55.1 ms
 
 --- 192.168.89.84 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 16.548/16.548/16.548/0.000 ms
+rtt min/avg/max/mdev = 55.129/55.129/55.129/0.000 ms
 PING 192.168.89.85 (192.168.89.85) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -517,11 +512,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.88 (192.168.89.88) 56(84) bytes of data.
-64 bytes from 192.168.89.88: icmp_seq=1 ttl=64 time=406 ms
+64 bytes from 192.168.89.88: icmp_seq=1 ttl=64 time=96.5 ms
 
 --- 192.168.89.88 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 405.648/405.648/405.648/0.000 ms
+rtt min/avg/max/mdev = 96.511/96.511/96.511/0.000 ms
 PING 192.168.89.89 (192.168.89.89) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
@@ -565,11 +560,11 @@ From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
 PING 192.168.89.96 (192.168.89.96) 56(84) bytes of data.
-64 bytes from 192.168.89.96: icmp_seq=1 ttl=64 time=1416 ms
+64 bytes from 192.168.89.96: icmp_seq=1 ttl=64 time=92.3 ms
 
 --- 192.168.89.96 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 1415.685/1415.685/1415.685/0.000 ms
+rtt min/avg/max/mdev = 92.285/92.285/92.285/0.000 ms
 PING 192.168.89.97 (192.168.89.97) 56(84) bytes of data.
 From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
