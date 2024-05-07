@@ -122,15 +122,23 @@ func PingNetworkMembers() {
 	fmt.Println(stringIPAddr)
 	fmt.Println(stringSubNet)
 
+	f, err := os.Create("new.txt")
+	if err != nil{
+		panic(err)
+	} 
+	defer f.Close()
+
 	for _, ch := range stringIPAddr{
 		for i:=1; i < 150; i++{
-			cmd := exec.Command("ping","-c","4",ObtainNetAddress(ch)+strconv.Itoa(i))
-			cmd.Stdout = os.Stdout
+			cmd := exec.Command("ping","-c","1",ObtainNetAddress(ch)+"."+strconv.Itoa(i))
+			cmd.Stdout = f
 
 			err := cmd.Run()
 			if err != nil{
 				fmt.Println(err.Error())
 			}
+
+					
 		}
 	}
 }
@@ -178,5 +186,5 @@ func main() {
 	// 	PingMembersOfNet(i)
 	// }
 	// PingMembersOfNet(173)
-	stringToInt()
+	PingNetworkMembers()
 }
