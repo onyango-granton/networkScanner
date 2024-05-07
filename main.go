@@ -12,33 +12,35 @@ import (
 	// "strings"
 )
 
+// KnowMyIp returns IP address of host Machine in lias with ObtainIP function
+// This function uses ObtainIP function
 func KnowMyIP() []string {
+	// cmd executes ip addr command
+	// in linux this shows the network address across interface(s)
 	cmd := exec.Command("ip", "addr")
 
+	// output from the exec.Command is stored
 	out, err := cmd.Output()
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(0)
 	}
 
-	// fmt.Println(string(out))
-
+	// output is then written to an output text file
+	// output.txt has been manualy edited to hide sensitive info
 	err1 := os.WriteFile("output.txt", out, 0o644)
 	if err1 != nil {
 		fmt.Println(err1.Error())
 	}
 
-	// for _,ch := range obtainIP("output.txt"){
-	// 	fmt.Println(ch)
-	// }
 	return obtainIP("output.txt")
 }
 
 func obtainIP(s string) []string {
+	// Read contents of file passed as argument
 	out, _ := os.ReadFile(s)
 	splitS := strings.Split(string(out), "\n")
 	res := []string{}
-	// inet := []string{}
 	ipAddr := []string{}
 
 	for _, ch := range splitS {
@@ -48,6 +50,7 @@ func obtainIP(s string) []string {
 
 	for _, ch := range res {
 		if strings.Contains(ch, "inet") {
+			// Filters out ipv6 addresses
 			if strings.Contains(ch, "inet6") {
 				continue
 			}
@@ -126,7 +129,7 @@ func PingNetworkMembers() {
 	defer f.Close()
 
 	for _, ch := range stringIPAddr {
-		for i := 1; i < 150; i++ {
+		for i := 1; i < 100; i++ {
 			cmd := exec.Command("ping", "-c", "1", ObtainNetAddress(ch)+"."+strconv.Itoa(i))
 			cmd.Stdout = f
 
