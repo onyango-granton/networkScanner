@@ -109,6 +109,19 @@ func (c customOutput) Write(p []byte) (int, error) {
 }
 
 
+func PingNetworkMembers() {
+	stringIPAddr := []string{}
+	stringSubNet := []string{}
+	for _, ch := range KnowMyIP(){
+		stringsSplit := strings.Split(ch, "/")
+		// fmt.Println(stringsSplit[0], "IP Addr")
+		stringIPAddr = append(stringIPAddr, stringsSplit[0])
+		// fmt.Println(stringsSplit[1], "SubnetMask")
+		stringSubNet = append(stringSubNet, stringsSplit[1])
+	}
+}
+
+
 
 func PingMembersOfNet(n int) {
 		cmd := exec.Command("ping", "-c","2","192.168.89."+strconv.Itoa(n))
@@ -142,5 +155,5 @@ func main() {
 	// 	PingMembersOfNet(i)
 	// }
 	// PingMembersOfNet(173)
-	KnowMyIP()
+	PingNetworkMembers()
 }
