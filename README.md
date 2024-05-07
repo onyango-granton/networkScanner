@@ -30,20 +30,19 @@ Network Scanner is a Go program designed to scan a network by sending ping reque
     ./networkScanner
 
 ## Output --> new.txt
+    --- 192.168.89.1 ping statistics ---
+    1 packets transmitted, 1 received, 0% packet loss, time 0ms
+    rtt min/avg/max/mdev = 257.064/257.064/257.064/0.000 ms
+    PING 192.168.89.2 (192.168.89.2) 56(84) bytes of data.
 
---- 192.168.89.27 ping statistics ---
-1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+    --- 192.168.89.2 ping statistics ---
+    1 packets transmitted, 0 received, 100% packet loss, time 0ms
 
-PING 192.168.89.28 (192.168.89.28) 56(84) bytes of data.
-64 bytes from 192.168.89.28: icmp_seq=1 ttl=64 time=922 ms
+    PING 192.168.89.3 (192.168.89.3) 56(84) bytes of data.
+    From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
 
---- 192.168.89.28 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 922.288/922.288/922.288/0.000 ms
-PING 192.168.89.29 (192.168.89.29) 56(84) bytes of data.
+    --- 192.168.89.3 ping statistics ---
+    1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
 
---- 192.168.89.29 ping statistics ---
-1 packets transmitted, 0 received, 100% packet loss, time 0ms
-
-PING 192.168.89.30 (192.168.89.30) 56(84) bytes of data.
-64 bytes from 192.168.89.30: icmp_seq=1 ttl=64 time=244 ms
+    PING 192.168.89.4 (192.168.89.4) 56(84) bytes of data.
+    From 192.168.89.173 icmp_seq=1 Destination Host Unreachable
