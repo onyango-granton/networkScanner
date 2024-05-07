@@ -87,27 +87,32 @@ func PingAddress() {
 }
 
 func PingNetworkMembers() {
+	// stringIPAddr is a list of obtained IP addresses without subnet mask
 	stringIPAddr := []string{}
+	// stringSubNet is a list of subnet masks without IP addresses
 	stringSubNet := []string{}
+
+	// looping through list of IPS
 	for _, ch := range KnowMyIP() {
+		// separating IP Address and Subnet Mask appending them
 		stringsSplit := strings.Split(ch, "/")
-		// fmt.Println(stringsSplit[0], "IP Addr")
 		stringIPAddr = append(stringIPAddr, stringsSplit[0])
-		// fmt.Println(stringsSplit[1], "SubnetMask")
 		stringSubNet = append(stringSubNet, stringsSplit[1])
 	}
-	fmt.Println(stringIPAddr)
-	fmt.Println(stringSubNet)
 
+	// creating a file called neew.txt to store output(ip addresses)
 	f, err := os.Create("new.txt")
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
 
+	// looping through list of ip addresses
 	for _, ch := range stringIPAddr {
+		// looping through members of network per ip address
 		for i := 1; i < 100; i++ {
 			cmd := exec.Command("ping", "-c", "1", ObtainNetAddress(ch)+"."+strconv.Itoa(i))
+			// store command data to out new.txt file
 			cmd.Stdout = f
 
 			err := cmd.Run()
