@@ -13,18 +13,7 @@ import (
 
 
 
-// PingAddress pings a website using ping command in linux
-func PingAddress() {
-	cmd := exec.Command("ping", "google.com")
 
-	cmd.Stdout = os.Stdout
-
-	err := cmd.Run()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(0)
-	}
-}
 
 // PingNetworkMembers sends data packets to members of a network
 // This function uses KnowMyIp function (and) ObtainNetAddress function
