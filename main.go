@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"strings"
 	"time"
 	// "time"
 	// "strings"
@@ -20,7 +21,49 @@ func KnowMyIP() {
 		os.Exit(0)
 	}
 
-	fmt.Println(string(out))
+	// fmt.Println(string(out))
+
+	err1 := os.WriteFile("output.txt", out, 0644)
+	if err1 != nil{
+		fmt.Println(err1.Error())
+	}
+
+	for _,ch := range obtainIP("output.txt"){
+		fmt.Println(ch)
+	}
+}
+
+func obtainIP(s string) []string {
+	out, _ := os.ReadFile(s)
+	splitS := strings.Split(string(out), "\n")
+	res := []string{}
+	// inet := []string{}
+	ipAddr := []string{}
+
+	for _, ch := range splitS{
+		ch = strings.Trim(ch," ")
+		res = append(res, ch)
+	}
+
+	for _, ch := range res{
+		if strings.Contains(ch, "inet"){
+			if strings.Contains(ch, "inet6"){
+				continue
+			}
+			if strings.Contains(ch, "127.0.0.1"){
+				continue
+			}
+			ch = strings.TrimLeft(ch, "inet ")
+			ch = strings.TrimRight(ch, " scope global dynamic noprefixroute wlp4s0")
+			// inet = append(inet, ch)
+
+			stringsSplit := strings.Split(ch, " ")
+			ipAddr = append(ipAddr, stringsSplit[0])
+		}
+	}
+
+	return ipAddr
+
 }
 
 func PingAddress() {
@@ -85,8 +128,9 @@ func main() {
 	//   fmt.Println("could not run command: ", err)
 	// }
 	// fmt.Println("Output: ", string(out))
-	for i := 1; i < 255; i++{
-		PingMembersOfNet(i)
-	}
+	// for i := 1; i < 255; i++{
+	// 	PingMembersOfNet(i)
+	// }
 	// PingMembersOfNet(173)
+	KnowMyIP()
 }
