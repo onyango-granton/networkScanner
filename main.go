@@ -119,6 +119,17 @@ func PingNetworkMembers() {
 		// fmt.Println(stringsSplit[1], "SubnetMask")
 		stringSubNet = append(stringSubNet, stringsSplit[1])
 	}
+	fmt.Println(stringIPAddr)
+	fmt.Println(stringSubNet)
+
+	for _, ch := range stringIPAddr
+}
+
+
+func stringToInt() {
+	s1 := "192.168.79.78"
+	splitString := strings.Split(s1, ".")
+	ipAddr,_ := strconv.Atoi(splitString[len(splitString)-1])
 }
 
 
