@@ -126,6 +126,8 @@ func PingNetworkMembers() {
 	}
 }
 
+// ObtainNetAddress takes in ip address as string xxx.xxx.xxx.xxx returns
+// netAddress xxx.xxx.xxx
 func ObtainNetAddress(s1 string) string {
 	// s1 := "192.168.79.78"
 	// splits a string "xxx.xxx.xxx.xxx" by "."
@@ -139,21 +141,5 @@ func ObtainNetAddress(s1 string) string {
 
 
 func main() {
-	// ctx := context.Background()
-	// // The context now times out after 1 second
-	// // alternately, we can call `cancel()` to terminate immediately
-	// ctx, _ = context.WithTimeout(ctx, 7*time.Second)
-
-	// cmd := exec.CommandContext(ctx, "ping", "192.268.0.33")
-
-	// out, err := cmd.Output()
-	// if err != nil {
-	//   fmt.Println("could not run command: ", err)
-	// }
-	// fmt.Println("Output: ", string(out))
-	// for i := 1; i < 255; i++{
-	// 	PingMembersOfNet(i)
-	// }
-	// PingMembersOfNet(173)
 	PingNetworkMembers()
 }
