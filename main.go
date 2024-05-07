@@ -1,15 +1,7 @@
 package main
 
-import "Functions/pingNetworkMembers"
-
-
-
-
-
-
-
-
+import functions "networkScanner/Functions"
 
 func main() {
-	Functions.PingNetworkMembers()
+	functions.PingNetworkMembers()
 }
