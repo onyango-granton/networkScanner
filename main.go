@@ -7,7 +7,6 @@ import (
 	"os/exec"
 	"strconv"
 	"strings"
-	"time"
 	// "time"
 	// "strings"
 )
@@ -74,35 +73,17 @@ func ObtainIP(s string) []string {
 	return ipAddr
 }
 
+// PingAddress pings a website using ping command in linux
 func PingAddress() {
 	cmd := exec.Command("ping", "google.com")
 
-	// startTime := time.Now()
-
 	cmd.Stdout = os.Stdout
-	startTime := time.Now()
-
-	fmt.Println("Here")
 
 	err := cmd.Run()
-
-	duration := time.Since(startTime).Seconds()
-
-	if int(duration) == 2 {
-		fmt.Println("Here")
-	}
-
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(0)
 	}
-}
-
-type customOutput struct{}
-
-func (c customOutput) Write(p []byte) (int, error) {
-	fmt.Println("received output: ", string(p))
-	return len(p), nil
 }
 
 func PingNetworkMembers() {
