@@ -86,6 +86,8 @@ func PingAddress() {
 	}
 }
 
+// PingNetworkMembers sends data packets to members of a network
+// This function uses KnowMyIp function (and) ObtainNetAddress function
 func PingNetworkMembers() {
 	// stringIPAddr is a list of obtained IP addresses without subnet mask
 	stringIPAddr := []string{}
@@ -126,24 +128,15 @@ func PingNetworkMembers() {
 
 func ObtainNetAddress(s1 string) string {
 	// s1 := "192.168.79.78"
+	// splits a string "xxx.xxx.xxx.xxx" by "."
 	splitString := strings.Split(s1, ".")
+	// network address is stored as first three parts of splitString joined by "."
 	netAddr := strings.Join(splitString[:3], ".")
-	// fmt.Println(netAddr)
+	
+	// return an address of "xxx.xxx.xxx"
 	return netAddr
 }
 
-func PingMembersOfNet(n int) {
-	cmd := exec.Command("ping", "-c", "2", "192.168.89."+strconv.Itoa(n))
-
-	cmd.Stdout = os.Stdout
-
-	err := cmd.Run()
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-
-	fmt.Println("END")
-}
 
 func main() {
 	// ctx := context.Background()
