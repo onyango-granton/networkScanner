@@ -12,7 +12,7 @@ import (
 	// "strings"
 )
 
-func KnowMyIP() []string{
+func KnowMyIP() []string {
 	cmd := exec.Command("ip", "addr")
 
 	out, err := cmd.Output()
@@ -23,8 +23,8 @@ func KnowMyIP() []string{
 
 	// fmt.Println(string(out))
 
-	err1 := os.WriteFile("output.txt", out, 0644)
-	if err1 != nil{
+	err1 := os.WriteFile("output.txt", out, 0o644)
+	if err1 != nil {
 		fmt.Println(err1.Error())
 	}
 
@@ -41,17 +41,17 @@ func obtainIP(s string) []string {
 	// inet := []string{}
 	ipAddr := []string{}
 
-	for _, ch := range splitS{
-		ch = strings.Trim(ch," ")
+	for _, ch := range splitS {
+		ch = strings.Trim(ch, " ")
 		res = append(res, ch)
 	}
 
-	for _, ch := range res{
-		if strings.Contains(ch, "inet"){
-			if strings.Contains(ch, "inet6"){
+	for _, ch := range res {
+		if strings.Contains(ch, "inet") {
+			if strings.Contains(ch, "inet6") {
 				continue
 			}
-			if strings.Contains(ch, "127.0.0.1"){
+			if strings.Contains(ch, "127.0.0.1") {
 				continue
 			}
 			ch = strings.TrimLeft(ch, "inet ")
@@ -73,14 +73,12 @@ func obtainIP(s string) []string {
 	// }
 
 	return ipAddr
-
 }
 
 func PingAddress() {
 	cmd := exec.Command("ping", "google.com")
 
 	// startTime := time.Now()
-	
 
 	cmd.Stdout = os.Stdout
 	startTime := time.Now()
@@ -91,7 +89,7 @@ func PingAddress() {
 
 	duration := time.Since(startTime).Seconds()
 
-	if int(duration) == 2{
+	if int(duration) == 2 {
 		fmt.Println("Here")
 	}
 
@@ -108,11 +106,10 @@ func (c customOutput) Write(p []byte) (int, error) {
 	return len(p), nil
 }
 
-
 func PingNetworkMembers() {
 	stringIPAddr := []string{}
 	stringSubNet := []string{}
-	for _, ch := range KnowMyIP(){
+	for _, ch := range KnowMyIP() {
 		stringsSplit := strings.Split(ch, "/")
 		// fmt.Println(stringsSplit[0], "IP Addr")
 		stringIPAddr = append(stringIPAddr, stringsSplit[0])
@@ -123,50 +120,44 @@ func PingNetworkMembers() {
 	fmt.Println(stringSubNet)
 
 	f, err := os.Create("new.txt")
-	if err != nil{
+	if err != nil {
 		panic(err)
-	} 
+	}
 	defer f.Close()
 
-	for _, ch := range stringIPAddr{
-		for i:=1; i < 150; i++{
-			cmd := exec.Command("ping","-c","1",ObtainNetAddress(ch)+"."+strconv.Itoa(i))
+	for _, ch := range stringIPAddr {
+		for i := 1; i < 150; i++ {
+			cmd := exec.Command("ping", "-c", "1", ObtainNetAddress(ch)+"."+strconv.Itoa(i))
 			cmd.Stdout = f
 
 			err := cmd.Run()
-			if err != nil{
+			if err != nil {
 				fmt.Println(err.Error())
 			}
 
-					
 		}
 	}
 }
 
-
-func ObtainNetAddress(s1 string)  string {
+func ObtainNetAddress(s1 string) string {
 	// s1 := "192.168.79.78"
 	splitString := strings.Split(s1, ".")
-	netAddr := strings.Join(splitString[:3],".")
+	netAddr := strings.Join(splitString[:3], ".")
 	// fmt.Println(netAddr)
 	return netAddr
 }
 
-
-
 func PingMembersOfNet(n int) {
-		cmd := exec.Command("ping", "-c","2","192.168.89."+strconv.Itoa(n))
+	cmd := exec.Command("ping", "-c", "2", "192.168.89."+strconv.Itoa(n))
 
-		cmd.Stdout = os.Stdout
+	cmd.Stdout = os.Stdout
 
-		err := cmd.Run()
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 
-		if err != nil{
-			fmt.Println(err.Error())
-		}
-
-		fmt.Println("END")
-
+	fmt.Println("END")
 }
 
 func main() {
@@ -174,9 +165,9 @@ func main() {
 	// // The context now times out after 1 second
 	// // alternately, we can call `cancel()` to terminate immediately
 	// ctx, _ = context.WithTimeout(ctx, 7*time.Second)
-	
+
 	// cmd := exec.CommandContext(ctx, "ping", "192.268.0.33")
-	
+
 	// out, err := cmd.Output()
 	// if err != nil {
 	//   fmt.Println("could not run command: ", err)
