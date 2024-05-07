@@ -122,14 +122,26 @@ func PingNetworkMembers() {
 	fmt.Println(stringIPAddr)
 	fmt.Println(stringSubNet)
 
-	for _, ch := range stringIPAddr
+	for _, ch := range stringIPAddr{
+		for i:=1; i < 150; i++{
+			cmd := exec.Command("ping","-c","4",ObtainNetAddress(ch)+strconv.Itoa(i))
+			cmd.Stdout = os.Stdout
+
+			err := cmd.Run()
+			if err != nil{
+				fmt.Println(err.Error())
+			}
+		}
+	}
 }
 
 
-func stringToInt() {
-	s1 := "192.168.79.78"
+func ObtainNetAddress(s1 string)  string {
+	// s1 := "192.168.79.78"
 	splitString := strings.Split(s1, ".")
-	ipAddr,_ := strconv.Atoi(splitString[len(splitString)-1])
+	netAddr := strings.Join(splitString[:3],".")
+	// fmt.Println(netAddr)
+	return netAddr
 }
 
 
@@ -166,5 +178,5 @@ func main() {
 	// 	PingMembersOfNet(i)
 	// }
 	// PingMembersOfNet(173)
-	PingNetworkMembers()
+	stringToInt()
 }
