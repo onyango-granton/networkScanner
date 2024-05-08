@@ -70,7 +70,7 @@ func CleanOutput() {
 
 	total := onlineClients + offlineClients
 
-	percentOnline := float64(44) / float64(99) * 100
+	percentOnline := float64(onlineClients) / float64(total) * 100
 	// percentOffline := offlineClients/total * 100
 
 	fmt.Printf("Scanned Address: %v\nOnline Clients: %v\nFree Addresses: %v\nPercent Online: %.2f\n", total, onlineClients, offlineClients, percentOnline)
