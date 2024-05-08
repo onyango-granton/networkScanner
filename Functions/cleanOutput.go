@@ -8,7 +8,7 @@ import (
 
 func CleanOutput() {
 
-	
+	PingNetworkMembers()
 
 	testFile := "output.txt"
 
